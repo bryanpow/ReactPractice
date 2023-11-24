@@ -1,0 +1,310 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
+body {
+  overflow-x: hidden;
+  user-select: none;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button {
+  cursor: pointer;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* Animations */
+@keyframes rotateAnimation {
+  0%{
+    transform: rotate(0deg)
+  }
+  100%{
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes breathing {
+  0%{
+    scale:1
+  }
+  50% {
+    scale: 1.02
+  }
+
+  100% {
+    scale:1
+  }
+}
+
+@keyframes grow {
+  0%{
+    scale:0
+  }
+  100%{
+    scale:1
+  }
+}
+
+/* Navigation Bar Styles */
+#navbar {
+
+  box-sizing: content-box;
+  display: flex;
+  border-bottom: 3px solid whitesmoke;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+#logo {
+  display:flex;
+  gap: 5px
+}
+#logo h2 {
+  align-self: center;
+}
+
+#pic1 {
+  align-self: center;
+  animation: rotateAnimation 3s linear infinite;
+}
+#pages {
+  font-size: x-large;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.pageItems{
+  transition: all 0.2s ease ;
+}
+.pageItems:hover {
+  color: #3bdcfe;
+}
+@media screen and (max-width: 700px) {
+  #pages {
+    display: none
+  }
+}
+
+/* Home Page Styles */
+#home {
+  text-align: center;
+
+}
+#welcome {
+  padding: 30px 100px 100px;
+  border-bottom: 8px solid whitesmoke;
+}
+#home h1 {
+  font-weight: 600;
+  font-size: 40px;
+}
+#home p {
+  font-size: 25px;
+}
+
+#projects {
+  background:  #3bdcfe;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 300px;
+}
+#projects h2 {
+  font-size: 100px;
+  font-weight: Normal;
+  font-family: 'Shadows Into Light', cursive;
+
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid black;
+  overflow: hidden;
+  background-color: white;
+  flex:1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 50px;
+  border-radius: 80px;
+  min-width: 200px;
+  max-width: 200px;
+  padding-bottom: 0;
+}
+
+.grey {
+  background-color: white;
+  padding-top: 10px;
+  border-radius: 100%;
+  padding: 20px;
+  font-family:monospace;
+
+}
+.card h3 {
+  font-size: 30px;
+}
+.desc {
+  font-size: 20px
+}
+.picture {
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2px transparent black;
+  transform: scale(150%) translateY(60%);
+  transition:  all 0.5s;
+}
+#info {
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+/* Animation for cards */
+#animateInfo {
+  opacity: 100%;
+  transition: all 0.5s
+}
+.animatePic {
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2 solid black;
+  transition: all 0.5s;
+}
+
+/* Clicker Game Syles */
+#clicker {
+
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: all 0s ease-in-out;
+}
+
+#startGame, #ClickButton {
+  cursor: pointer;
+  border: 0.5px solid black;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-radius: 100%;
+  user-select: none;
+  background-color: whitesmoke;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 100px;
+  margin-top: 0px;
+  width:50vh;
+  height:50vh;
+  
+  animation: 2s grow initial;
+  
+}
+#inactiveClicker {
+  display:none
+}
+#inactiveStart {
+  opacity: 0%;
+}
+#hideMess {
+  display:none
+}
+.clickGame {
+  /* animation: 1.5s slideCard infinite; */
+  margin:0;
+}
+
+#instruct {
+  background-color: white;
+  border-bottom: 3px solid whitesmoke;
+  padding: 100px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-top: 20px;
+  font-size: 20px;
+  transition: 3s ease-in;
+}
+#instruct h3 {
+  font-weight: 400;
+}
+
+#loader{
+  margin-top:0;
+  max-height:1000px;
+  opacity: 1
+}
+#results {
+  font-weight: 100;
+  opacity:0;
+  position: relative;
+  /* animation: 1.5s resultShow infinite; */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  display: grid;
+  display:none;
+ grid-template-columns: repeat(auto-fill,minmax(500px, 1fr));
+  grid-template-rows: 1fr 1fr ; 
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  gap: 20px;
+  scale: 0.7;
+  transition: all 0s;
+}
+#results p {
+  font-size: 40px;
+
+}
+.result {
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  font-weight: normal;
+  padding: 50px;
+  margin: 0;
+  text-align: center;
+}
+#cs, #tc {
+  font-size: 50px;
+  text-align: center;
+}
+#loader {
+  margin: 50px;
+  margin-bottom: 100px;
+}
+#playagain {
+  animation: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid black;
+  position: relative;
+  left: 52%;
+  justify-self: center;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 30px;
+  width: 200px;
+  height:  100px;
+ 
+}
+#starting{
+  
+}
+button#startGame {
+  animation: breathing 2s infinite;
+}
+
+/* Footer Styles */
+footer {
+  background-color: white;
+ border-top: 5px solid whitesmoke;
+ font-size: 20px;
+ text-align: center;
+}
+
